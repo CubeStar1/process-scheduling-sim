@@ -23,26 +23,26 @@ const mainNavItems = [
     title: "Algorithms",
     icon: Cpu,
     items: [
-      { title: "First Come First Serve", href: "/?algorithm=fcfs" },
-      { title: "Shortest Job First", href: "/?algorithm=sjf" },
-      { title: "Round Robin", href: "/?algorithm=rr" },
-      { title: "Shortest Remaining Time First", href: "/?algorithm=srtf" },
+      { title: "First Come First Serve", href: "/" },
+      { title: "Shortest Job First", href: "/algorithms/sjf" },
+      { title: "Round Robin", href: "/algorithms/rr" },
+      { title: "Shortest Remaining Time First", href: "/algorithms/srtf" },
     ],
   },
-  {
-    title: "Resources",
-    icon: BookOpen,
-    items: [
-      { title: "Documentation", href: "/docs" },
-      { title: "Examples", href: "/examples" },
-    ],
-  },
+  // {
+  //   title: "Resources",
+  //   icon: BookOpen,
+  //   items: [
+  //     { title: "Documentation", href: "/docs" },
+  //     { title: "Examples", href: "/examples" },
+  //   ],
+  // },
   {
     title: "More",
     icon: Settings,
     items: [
       { title: "About", href: "/about" },
-      { title: "Source Code", href: "https://github.com/yourusername/your-repo" },
+      { title: "Source Code", href: "https://github.com/CubeStar1/process-scheduling-sim" },
     ],
   },
 ]

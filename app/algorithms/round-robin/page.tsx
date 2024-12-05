@@ -33,8 +33,8 @@ export default async function RoundRobinPage() {
           <ul className="list-disc list-inside space-y-2">
             <li>Each process gets a fixed time quantum (time slice)</li>
             <li>After the time quantum expires, the process is preempted and added to the end of the ready queue</li>
-            <li>The context switch happens even if the process hasn't completed</li>
-            <li>If a process's remaining burst time is less than the time quantum, it runs to completion</li>
+            <li>The context switch happens even if the process hasn&apos;t completed</li>
+            <li>If a process&apos;s remaining burst time is less than the time quantum, it runs to completion</li>
           </ul>
         </CardContent>
       </Card>

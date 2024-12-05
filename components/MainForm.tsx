@@ -143,11 +143,11 @@ export default function MainForm() {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto space-y-8">
+    <div className="w-full max-w-6xl mx-auto space-y-8 p-4">
       {/* Top Section - Algorithm Selection and Process Management */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Algorithm Selection Card */}
-        <Card className="w-full">
+        <Card className="backdrop-blur-sm bg-card/50 border-border/50">
           <CardHeader>
             <CardTitle>Algorithm Configuration</CardTitle>
             <CardDescription>Choose and configure your scheduling algorithm</CardDescription>
@@ -169,7 +169,7 @@ export default function MainForm() {
                         defaultValue={field.value}
                       >
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="bg-background/50 backdrop-blur-sm">
                             <SelectValue placeholder="Select an algorithm" />
                           </SelectTrigger>
                         </FormControl>
@@ -196,7 +196,7 @@ export default function MainForm() {
                             type="number"
                             {...field}
                             placeholder="Enter time quantum"
-                            className="input-field"
+                            className="bg-background/50 backdrop-blur-sm"
                           />
                         </FormControl>
                         <FormMessage />
@@ -204,14 +204,16 @@ export default function MainForm() {
                     )}
                   />
                 )}
-                <Button type="submit" className="w-full">Simulate</Button>
+                <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                  Simulate
+                </Button>
               </form>
             </Form>
           </CardContent>
         </Card>
 
         {/* Process Management Card */}
-        <Card className="w-full">
+        <Card className="backdrop-blur-sm bg-card/50 border-border/50">
           <CardHeader>
             <CardTitle>Process Management</CardTitle>
             <CardDescription>Add and configure processes for simulation</CardDescription>
@@ -221,7 +223,7 @@ export default function MainForm() {
               {processes.map((process, index) => (
                 <div 
                   key={index} 
-                  className="relative group p-4 rounded-lg border bg-card hover:shadow-md transition-all"
+                  className="relative group p-4 rounded-lg border border-border/50 bg-background/50 backdrop-blur-sm hover:border-primary/50 transition-all duration-300"
                 >
                   <div
                     className="absolute inset-0 opacity-10 rounded-lg"
@@ -249,11 +251,11 @@ export default function MainForm() {
             <div className="flex justify-center gap-4">
               <Popover open={popoverOpen} onOpenChange={setPopoverOpen}>
                 <PopoverTrigger asChild>
-                  <Button variant="outline">
+                  <Button variant="outline" className="bg-background/50 backdrop-blur-sm">
                     Add Process
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-80">
+                <PopoverContent className="w-80 backdrop-blur-sm bg-card/50">
                   <ProcessForm
                     addProcess={addProcess}
                     initialValues={currentEditIndex !== null ? processes[currentEditIndex] : undefined}
@@ -261,9 +263,10 @@ export default function MainForm() {
                 </PopoverContent>
               </Popover>
               <Button 
-                variant="outline" 
+                variant="outline"
                 onClick={() => setProcesses([])}
                 disabled={processes.length === 0}
+                className="bg-background/50 backdrop-blur-sm"
               >
                 Clear All
               </Button>
@@ -276,7 +279,7 @@ export default function MainForm() {
       {finalizedProcesses.length > 0 && (
         <div ref={summaryRef} className="space-y-8">
           {/* Gantt Chart Card */}
-          <Card>
+          <Card className="backdrop-blur-sm bg-card/50 border-border/50">
             <CardHeader>
               <CardTitle>Gantt Chart</CardTitle>
               <CardDescription>Visual representation of process execution over time</CardDescription>
@@ -291,7 +294,7 @@ export default function MainForm() {
           {/* Analysis Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
             {/* Summary Statistics Card */}
-            <Card className="lg:col-span-1">
+            <Card className="lg:col-span-1 backdrop-blur-sm bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle>Performance Metrics</CardTitle>
                 <CardDescription>Key scheduling metrics</CardDescription>
@@ -305,7 +308,7 @@ export default function MainForm() {
             </Card>
 
             {/* Process Details Table Card */}
-            <Card className="lg:col-span-3">
+            <Card className="lg:col-span-3 backdrop-blur-sm bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle>Process Details</CardTitle>
                 <CardDescription>Detailed breakdown of process execution times</CardDescription>
